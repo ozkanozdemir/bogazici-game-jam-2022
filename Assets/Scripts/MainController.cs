@@ -32,7 +32,11 @@ public class MainController : MonoBehaviour
 
     private void CheckPasswords()
     {
-        if (!targetedPassword.StartsWith(_collectedPassword))
+        if (targetedPassword.Equals(_collectedPassword))
+        {
+            Debug.Log("Oyun Bitti. yendin");
+        }
+        else if (!targetedPassword.StartsWith(_collectedPassword))
         {
             Debug.Log("Oyun Bitti");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
