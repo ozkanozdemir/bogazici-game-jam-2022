@@ -60,7 +60,7 @@ public class MainController : MonoBehaviour
             collectedPasswordText.color = truePasswordColor;
             
             // Sonraki bölümü yükle
-            NextLevel();
+            Invoke("NextLevel", 1f);
         }
         else if (!targetedPassword.StartsWith(_collectedPassword))
         {

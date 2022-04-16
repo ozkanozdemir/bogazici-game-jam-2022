@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float jumpAmount = 10f;
+    [SerializeField] Animator _animator;
 
     private Rigidbody2D _rigidbody;
 
@@ -36,11 +37,23 @@ public class PlayerController : MonoBehaviour
             // yatay hareket
             _velocity = new Vector3(horizontalAxisRaw, 0f);
             transform.position += _velocity * moveSpeed * Time.deltaTime;
+            _animator.SetFloat("Speed", Mathf.Abs(horizontalAxisRaw));
 
             // Zıplama hareketi
             if (Input.GetButtonDown("Jump") && Mathf.Approximately(_rigidbody.velocity.y, 0))
             {
                 _rigidbody.AddForce(Vector3.up * jumpAmount, ForceMode2D.Impulse);
+                _animator.SetBool("IsJumping", true);
+            }
+
+            if (!Mathf.Approximately(_rigidbody.velocity.y, 0))
+            {
+                _animator.SetBool("IsJumping", true);
+            }
+
+            if (_animator.GetBool("IsJumping") && Mathf.Approximately(_rigidbody.velocity.y, 0))
+            {
+                _animator.SetBool("IsJumping", false);
             }
             
             // Oyuncu ssola dönük ise 180 derece y ekseninde rotate ediliyor
@@ -53,6 +66,10 @@ public class PlayerController : MonoBehaviour
             {
                 transform.rotation = Quaternion.Euler(0f, 0f, 0f);   
             }   
+        }
+        else
+        {
+            _animator.SetFloat("Speed", 0);
         }
     }
 
