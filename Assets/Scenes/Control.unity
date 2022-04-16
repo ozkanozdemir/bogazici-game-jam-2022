@@ -320,14 +320,14 @@ RectTransform:
   m_GameObject: {fileID: 889249944}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.283324, y: 8.283324, z: 8.283324}
+  m_LocalScale: {x: 1.8874383, y: 1.8874383, z: 1.8874383}
   m_Children: []
   m_Father: {fileID: 517686208}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.33100003, y: 0.5}
   m_AnchorMax: {x: 0.6713438, y: 0.60150003}
-  m_AnchoredPosition: {x: -4, y: 11.5}
+  m_AnchoredPosition: {x: -4, y: 94}
   m_SizeDelta: {x: -1147, y: -189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &889249946
@@ -352,16 +352,16 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: edef2b15c591a4745b8dec02543c12ec, type: 3}
-    m_FontSize: 14
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 150
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: KONTROLLER
 --- !u!222 &889249947
@@ -615,14 +615,14 @@ RectTransform:
   m_GameObject: {fileID: 1204016744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.14317, y: 0.14317, z: 0.14317}
   m_Children: []
   m_Father: {fileID: 1723104660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1204016746
@@ -647,16 +647,16 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: edef2b15c591a4745b8dec02543c12ec, type: 3}
-    m_FontSize: 14
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "OYUNA BA\u015ELA"
 --- !u!222 &1204016747
@@ -694,14 +694,14 @@ RectTransform:
   m_GameObject: {fileID: 1492887728}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.14317, y: 0.14317, z: 0.14317}
   m_Children: []
   m_Father: {fileID: 1068454884}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -6}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1492887730
@@ -726,16 +726,16 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: edef2b15c591a4745b8dec02543c12ec, type: 3}
-    m_FontSize: 14
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "GER\u0130 D\xD6N"
 --- !u!222 &1492887731
@@ -981,14 +981,14 @@ RectTransform:
   m_GameObject: {fileID: 1880758887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 7.0527315, y: 6.797813, z: 6.797813}
+  m_LocalScale: {x: 0.9272367, y: 0.893722, z: 0.893722}
   m_Children: []
   m_Father: {fileID: 517686208}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.16900001}
   m_AnchorMax: {x: 0.76079166, y: 0.4762593}
-  m_AnchoredPosition: {x: -157.5, y: -6}
+  m_AnchoredPosition: {x: -157.5, y: 302}
   m_SizeDelta: {x: -2466.8335, y: -568.2513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1880758889
@@ -1013,19 +1013,19 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: edef2b15c591a4745b8dec02543c12ec, type: 3}
-    m_FontSize: 15
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 150
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "                             HAREKET -> A+D / SA\u011E SOL Y\xD6N TU\u015ELARI\nZIPLAMA
-    -> SPACE TU\u015EU\n"
+  m_Text: "                             HAREKET -> A+D / SA\u011E SOL Y\xD6N TU\u015ELARI\n 
+    ZIPLAMA -> SPACE TU\u015EU\n"
 --- !u!222 &1880758890
 CanvasRenderer:
   m_ObjectHideFlags: 0
