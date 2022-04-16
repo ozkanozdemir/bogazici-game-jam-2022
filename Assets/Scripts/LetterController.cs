@@ -12,6 +12,7 @@ public class LetterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // _mainController değişkenine MainController sınıfını ata
         _mainController = FindObjectOfType<MainController>();
     }
 
@@ -23,9 +24,16 @@ public class LetterController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        // Letter objesine dokunan Player objesi ise _mainController'ı kullanarak toplananan password text'ini toplanan 
+        // karakteri ekle ve bu objeyi yok et
         if (col.tag.Equals("Player"))
         {
+            // TODO: Toplandı sesini çal
+            
+            // Toplanan password text'ine bu karakteri ekle
             _mainController.AddCharToPasswordString(letter);
+            
+            // Objeyi yok et
             Destroy(gameObject);
         }
     }

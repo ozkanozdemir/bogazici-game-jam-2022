@@ -14,6 +14,7 @@ public class CameraFollow : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+        // Kameranın yumuşak geçişlerle player objesini takip etmesi
         targetedPosition = targetObject.transform.position + cameraOffset;
         transform.position = Vector3.SmoothDamp(transform.position, targetedPosition, ref _velocity, smoothTime);
     }
