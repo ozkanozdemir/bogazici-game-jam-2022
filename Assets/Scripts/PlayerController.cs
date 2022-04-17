@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(SceneManager.GetActiveScene().name);
         // _rigidbody değişkenine objenin RigidBody2d komponentini ata
         _rigidbody = GetComponent<Rigidbody2D>();
         

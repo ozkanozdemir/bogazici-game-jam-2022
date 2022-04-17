@@ -26,7 +26,9 @@ public class InfiniteScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetActiveScene().name.StartsWith("Level") && Input.GetKeyDown(KeyCode.R))
+        if ((SceneManager.GetActiveScene().name.StartsWith("Level") || 
+             SceneManager.GetActiveScene().name.StartsWith("level")) && 
+            Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }       
