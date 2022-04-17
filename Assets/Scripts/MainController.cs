@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,6 +12,7 @@ public class MainController : MonoBehaviour
     [SerializeField] TextMeshProUGUI gameOverText;
     [SerializeField] Color32 wrongPasswordColor;
     [SerializeField] Color32 truePasswordColor;
+    [SerializeField] GameObject finishObject;
 
     private string _collectedPassword = "";
     private PlayerController _playerController;
@@ -59,8 +61,11 @@ public class MainController : MonoBehaviour
             // collectedPasswordTextMeshPro rengini değiştir
             collectedPasswordText.color = truePasswordColor;
             
+            // Finish objecti görünür yap
+            finishObject.SetActive(true);
+            
             // Sonraki bölümü yükle
-            Invoke("NextLevel", 1f);
+            // Invoke("NextLevel", 1f);
         }
         else if (!targetedPassword.StartsWith(_collectedPassword))
         {
@@ -82,6 +87,11 @@ public class MainController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void LoadNextLevel()
+    {
+        Invoke("NextLevel", 1f);
+    }
     
     // Sonraki bölümü yükleme
     private void NextLevel()
@@ -96,6 +106,6 @@ public class MainController : MonoBehaviour
         gameOverText.text = "GAME OVER";
         
         // 1 saniye sonra, aynı sahneyi yeniden yükle
-        Invoke("ReloadLevel", 1f);
+        Invoke("ReloadLevel", 1.5f);
     }
 }

@@ -7,10 +7,11 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float jumpAmount = 10f;
-    [SerializeField] Animator _animator;
-
+    [SerializeField] Animator animator;
+    [SerializeField] private GameObject dieEffect;
+    
     private Rigidbody2D _rigidbody;
-
+    
     private Vector3 _velocity;
     private bool _isDead = false;
     private MainController _mainController;
@@ -37,23 +38,23 @@ public class PlayerController : MonoBehaviour
             // yatay hareket
             _velocity = new Vector3(horizontalAxisRaw, 0f);
             transform.position += _velocity * moveSpeed * Time.deltaTime;
-            _animator.SetFloat("Speed", Mathf.Abs(horizontalAxisRaw));
+            animator.SetFloat("Speed", Mathf.Abs(horizontalAxisRaw));
 
             // Zıplama hareketi
             if (Input.GetButtonDown("Jump") && Mathf.Approximately(_rigidbody.velocity.y, 0))
             {
                 _rigidbody.AddForce(Vector3.up * jumpAmount, ForceMode2D.Impulse);
-                _animator.SetBool("IsJumping", true);
+                animator.SetBool("IsJumping", true);
             }
 
             if (!Mathf.Approximately(_rigidbody.velocity.y, 0))
             {
-                _animator.SetBool("IsJumping", true);
+                animator.SetBool("IsJumping", true);
             }
 
-            if (_animator.GetBool("IsJumping") && Mathf.Approximately(_rigidbody.velocity.y, 0))
+            if (animator.GetBool("IsJumping") && Mathf.Approximately(_rigidbody.velocity.y, 0))
             {
-                _animator.SetBool("IsJumping", false);
+                animator.SetBool("IsJumping", false);
             }
             
             // Oyuncu ssola dönük ise 180 derece y ekseninde rotate ediliyor
@@ -69,21 +70,28 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            _animator.SetFloat("Speed", 0);
+            animator.SetFloat("Speed", 0);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        // Oyuncunun dokunduğu objenin tag'i floor ise oyuncuyu öldür ve bölümü yeniden başlat
-        if (col.gameObject.tag.Equals("Floor"))
+        Debug.Log(col.gameObject.tag);
+        // Oyuncunun dokunduğu objenin tag'i floor veya Killer ise oyuncuyu öldür ve bölümü yeniden başlat
+        if (col.gameObject.tag.Equals("Floor") || col.gameObject.tag.Equals("Killer"))
         {
             // oyuncuyu öldür
             _isDead = true;
             
+            // Ölme effekti
+            GameObject dieEffectGameObject = Instantiate(dieEffect, transform.position, Quaternion.identity);
+            Destroy(dieEffectGameObject, 1.5f);
+            Destroy(gameObject);
+
             // Oyun başarısız şekilde bitti
             _mainController.GameOver();
         }
+        
     }
 
     // Player'ın ölme durumunun tutulduğu değişkeni güncelleme
