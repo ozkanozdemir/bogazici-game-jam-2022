@@ -43,9 +43,7 @@ public class MainController : MonoBehaviour
         
         // collectedPasswordTextMeshPro text değerini güncelle
         collectedPasswordText.text = _collectedPassword;
-
-        Debug.Log(_collectedPassword);
-
+        
         // Parolanın son halini kontrol et
         CheckPasswords();
     }
@@ -56,8 +54,6 @@ public class MainController : MonoBehaviour
         // Parolanın son hali olması gereken ile aynı ise sonraki bölümü yükle
         if (targetedPassword.Equals(_collectedPassword))
         {
-            Debug.Log("Oyun Bitti. yendin");
-            
             // collectedPasswordTextMeshPro rengini değiştir
             collectedPasswordText.color = truePasswordColor;
             
@@ -68,9 +64,7 @@ public class MainController : MonoBehaviour
             // Invoke("NextLevel", 1f);
         }
         else if (!targetedPassword.StartsWith(_collectedPassword))
-        {
-            Debug.Log("Oyun Bitti");
-            
+        {            
             // Oyuncuyu öldür
             _playerController.SetIsDead(true);
             

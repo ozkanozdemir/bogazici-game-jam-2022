@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,12 +10,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpAmount = 10f;
     [SerializeField] Animator animator;
     [SerializeField] private GameObject dieEffect;
+    [SerializeField] private AudioClip dieClip;
+    [SerializeField] private AudioClip collactedClip;
     
     private Rigidbody2D _rigidbody;
     
     private Vector3 _velocity;
-    private bool _isDead = false;
+    private bool _isDead;
     private MainController _mainController;
+    private AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +28,9 @@ public class PlayerController : MonoBehaviour
         
         // _mainController değişkenine MainController sınıfını ata
         _mainController = FindObjectOfType<MainController>();
+        
+        // Audip source
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -70,6 +77,10 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            // Ölme sesi
+            AudioSource.PlayClipAtPoint(dieClip, transform.position);
+            
+            // Koşma animasyonunu bitir
             animator.SetFloat("Speed", 0);
             
             // Ölme effekti
@@ -90,7 +101,15 @@ public class PlayerController : MonoBehaviour
             // oyuncuyu öldür
             _isDead = true;
         }
-        
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag.Equals("Letter"))
+        {
+            // Toplama sesi
+            AudioSource.PlayClipAtPoint(collactedClip, transform.position);
+        }
     }
 
     // Player'ın ölme durumunun tutulduğu değişkeni güncelleme
