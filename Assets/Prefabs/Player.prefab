@@ -49,8 +49,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 9
-  jumpAmount: 6
-  _animator: {fileID: 6148489889622234544}
+  jumpAmount: 12
+  animator: {fileID: 6148489889622234544}
+  dieEffect: {fileID: 7928903994297928254, guid: 161d9a5506864aecaba68321349dea5b, type: 3}
 --- !u!50 &6148489889622234550
 Rigidbody2D:
   serializedVersion: 4
@@ -66,7 +67,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
