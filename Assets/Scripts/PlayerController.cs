@@ -71,17 +71,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetFloat("Speed", 0);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log(col.gameObject.tag);
-        // Oyuncunun dokunduğu objenin tag'i floor veya Killer ise oyuncuyu öldür ve bölümü yeniden başlat
-        if (col.gameObject.tag.Equals("Floor") || col.gameObject.tag.Equals("Killer"))
-        {
-            // oyuncuyu öldür
-            _isDead = true;
             
             // Ölme effekti
             GameObject dieEffectGameObject = Instantiate(dieEffect, transform.position, Quaternion.identity);
@@ -90,6 +79,16 @@ public class PlayerController : MonoBehaviour
 
             // Oyun başarısız şekilde bitti
             _mainController.GameOver();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        // Oyuncunun dokunduğu objenin tag'i floor veya Killer ise oyuncuyu öldür ve bölümü yeniden başlat
+        if (col.gameObject.tag.Equals("Floor") || col.gameObject.tag.Equals("Killer"))
+        {
+            // oyuncuyu öldür
+            _isDead = true;
         }
         
     }
