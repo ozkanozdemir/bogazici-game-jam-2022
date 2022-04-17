@@ -5,18 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class InfiniteScript : MonoBehaviour
 {
-    private bool _musicExist;
+    private static bool _musicExist;
     
     // Start is called before the first frame update
     void Start()
     {
         if (!_musicExist)
         {
-            DontDestroyOnLoad(gameObject);
             _musicExist = true;
+            Debug.Log("Not Destroyed");
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
+            Debug.Log("Destroyed");
             Destroy(gameObject);
         }
     }
