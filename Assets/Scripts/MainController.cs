@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainController : MonoBehaviour
 {
     [SerializeField] string targetedPassword;
-    [SerializeField] TextMeshProUGUI collectedPasswordText;
-    [SerializeField] TextMeshProUGUI gameOverText;
+    [SerializeField] Text collectedPasswordText;
+    [SerializeField] Text gameOverText;
     [SerializeField] Color32 wrongPasswordColor;
     [SerializeField] Color32 truePasswordColor;
     [SerializeField] GameObject finishObject;
