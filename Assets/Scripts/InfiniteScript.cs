@@ -13,12 +13,10 @@ public class InfiniteScript : MonoBehaviour
         if (!_musicExist)
         {
             _musicExist = true;
-            Debug.Log("Not Destroyed");
             DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Debug.Log("Destroyed");
             Destroy(gameObject);
         }
     }
